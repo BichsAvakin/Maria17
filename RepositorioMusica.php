@@ -2,7 +2,7 @@
 class RepositorioMusica{
   public function cadastrar(Musica $Musica, PDO $pdo){
     
-    $codigoSql = "INSERT INTO Musica (titulo,artista,genero,duracao,anodeduracao) VALUES (:t,:a,:g,:d,:n)";
+    $codigoSql = "INSERT INTO Musica (titulo,artista,genero,duracao,anodelancamento) VALUES (:t,:a,:g,:d,:n)";
 
     $titulo = $Musica->exibirTitulo();
     $artista= $Musica->exibirArtista();
@@ -17,7 +17,7 @@ class RepositorioMusica{
     $inserir->bindParam(":a",$artista);
     $inserir->bindParam(":g",$genero);
     $inserir->bindParam(":d",$duracao);
-    $inserir->bindParam(":n",$anodeduracao);
+    $inserir->bindParam(":n",$anodelancamento);
 
     
     $inserir->execute();
